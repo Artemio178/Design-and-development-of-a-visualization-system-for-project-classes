@@ -1,0 +1,7 @@
+db.url=jdbc:mysql://localhost:3300/your_database?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+db.username=root
+db.password=your_password
+
+spring.datasource.backup.url=jdbc:mysql://localhost:3300/your_database?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+spring.datasource.backup.username=root
+spring.datasource.backup.password=your_password

@@ -1,0 +1,137 @@
+.root-pane {
+    -fx-background-color: #f0f4f8;
+    -fx-font-family: "Segoe UI", "SF Pro Text", "Helvetica Neue", sans-serif;
+}
+
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+    -fx-border-color: transparent;
+}
+
+.card-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1a1a;
+}
+
+.card-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #888888;
+    -fx-wrap-text: true;
+}
+
+.path-field {
+    -fx-background-color: #f2f2f2;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-padding: 10 14;
+    -fx-font-size: 13px;
+    -fx-prompt-text-fill: #aaaaaa;
+    -fx-text-fill: #333333;
+}
+
+.path-field:focused {
+    -fx-background-color: #ebebeb;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.06), 6, 0, 0, 1);
+}
+
+.button-browse {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #444444;
+    -fx-background-radius: 8;
+    -fx-border-color: #e0e4e8;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 10 16;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.button-browse:hover {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #d0d5dc;
+}
+
+.button-primary {
+    -fx-background-color: #6b6b73;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 12 20;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.button-primary:hover {
+    -fx-background-color: #5a5a62;
+}
+
+.button-primary:pressed {
+    -fx-background-color: #4d4d54;
+}
+
+.button-secondary {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #555555;
+    -fx-background-radius: 8;
+    -fx-border-color: #e0e4e8;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8 14;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.button-secondary:hover {
+    -fx-background-color: #f8f9fa;
+}
+
+.button-icon {
+    -fx-background-color: transparent;
+    -fx-text-fill: #555555;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-font-size: 13px;
+    -fx-min-width: 36;
+    -fx-cursor: hand;
+}
+
+.button-icon:hover {
+    -fx-background-color: #eef1f5;
+}
+
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888888;
+    -fx-padding: 4 8;
+}
+
+.diagram-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12;
+}
+
+.diagram-toolbar {
+    -fx-background-color: #f8f9fb;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12;
+}
+
+.zoom-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #666666;
+    -fx-padding: 0 8;
+}
+
+.scroll-pane-diagram {
+    -fx-background-color: #f5f7fa;
+    -fx-background-radius: 8;
+    -fx-border-color: #eef1f5;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+.scroll-pane-diagram > .viewport {
+    -fx-background-color: #f5f7fa;
+}

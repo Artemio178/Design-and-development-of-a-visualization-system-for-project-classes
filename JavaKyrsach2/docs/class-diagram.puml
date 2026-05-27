@@ -1,0 +1,92 @@
+@startuml
+title JavaKyrsach2 - UML Class Diagram
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+
+package "org.example.javakyrsach2" {
+  class HelloApplication
+  class MainView
+}
+
+package "org.example.javakyrsach2.model" {
+  class DiagramModel
+  class ClassInfo
+  class RelationInfo
+  enum RelationType
+}
+
+package "org.example.javakyrsach2.service" {
+  class ProjectScanner
+  class JavaClassParser
+}
+
+package "org.example.javakyrsach2.db" {
+  class DatabaseConfig
+  class DatabaseInitializer
+  class DiagramRepository
+  class AnalysisSummary
+}
+
+package "org.example.javakyrsach2.ui" {
+  class ZoomableDiagramView
+  class DiagramPane
+  class AppTheme
+  class AppIcons
+}
+
+package "org.example.javakyrsach2.export" {
+  class DiagramPngExporter
+  class DiagramSvgWriter
+  class DiagramRenderSnapshot
+}
+
+' --- inheritance / framework extension ---
+HelloApplication --|> "javafx.application.Application"
+MainView --|> "javafx.scene.layout.BorderPane"
+ZoomableDiagramView --|> "javafx.scene.layout.BorderPane"
+DiagramPane --|> "javafx.scene.layout.Pane"
+
+' --- composition / ownership ---
+ZoomableDiagramView *-- DiagramPane
+DiagramModel *-- "many" ClassInfo
+DiagramModel *-- "many" RelationInfo
+RelationInfo --> RelationType
+DiagramRenderSnapshot --> RelationType
+
+' --- core application flow ---
+HelloApplication --> DatabaseInitializer : init DB
+HelloApplication --> MainView : creates
+
+MainView --> ProjectScanner
+MainView --> JavaClassParser
+MainView --> DiagramRepository
+MainView --> ZoomableDiagramView
+MainView --> DiagramModel
+MainView ..> AppTheme : styles
+MainView ..> AppIcons : icons
+
+JavaClassParser --> DiagramModel
+JavaClassParser --> ClassInfo
+JavaClassParser --> RelationInfo
+JavaClassParser --> RelationType
+
+DiagramRepository --> DatabaseConfig
+DiagramRepository --> DiagramModel
+DiagramRepository --> ClassInfo
+DiagramRepository --> RelationInfo
+DiagramRepository --> RelationType
+DiagramRepository --> AnalysisSummary
+
+DiagramPane --> DiagramModel : render(model)
+DiagramPane --> ClassInfo
+DiagramPane --> RelationInfo
+DiagramPane --> RelationType
+DiagramPane ..> DiagramPngExporter : export PNG
+DiagramPane ..> DiagramSvgWriter : export SVG
+DiagramPane --> DiagramRenderSnapshot
+
+DiagramPngExporter ..> DiagramPane
+DiagramSvgWriter --> DiagramRenderSnapshot
+
+@enduml

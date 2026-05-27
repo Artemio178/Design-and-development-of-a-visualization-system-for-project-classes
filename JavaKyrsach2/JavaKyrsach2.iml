@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://D:/javafx-sdk-26.0.1/lib">
+      <sourceFolder url="file://D:/javafx-sdk-26.0.1/lib/JavaDiagrms/src" isTestSource="false" />
+      <sourceFolder url="file://D:/javafx-sdk-26.0.1/lib/JavaFx/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://D:/javafx-sdk-26.0.1/lib/Javafxe/src" isTestSource="false" />
+      <sourceFolder url="file://D:/javafx-sdk-26.0.1/lib/demo/src/main/java" isTestSource="false" />
+    </content>
+  </component>
+</module>

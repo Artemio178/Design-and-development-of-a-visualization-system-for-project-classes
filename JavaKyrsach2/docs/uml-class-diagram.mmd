@@ -1,0 +1,82 @@
+classDiagram
+direction LR
+
+class HelloApplication
+class MainView
+class ProjectScanner
+class JavaClassParser
+
+class DiagramModel
+class ClassInfo
+class RelationInfo
+class RelationType {
+  <<enumeration>>
+  INHERITANCE
+  IMPLEMENTATION
+  ASSOCIATION
+  DEPENDENCY
+}
+
+class ZoomableDiagramView
+class DiagramPane
+class AppTheme
+class AppIcons
+
+class DiagramRepository
+class DatabaseConfig
+class DatabaseInitializer
+class AnalysisSummary
+
+class DiagramPngExporter
+class DiagramSvgWriter
+class DiagramRenderSnapshot
+class ClassBlock
+class EdgeSegment
+class Legend
+
+HelloApplication --> MainView
+HelloApplication --> DatabaseInitializer
+
+MainView --> ProjectScanner
+MainView --> JavaClassParser
+MainView --> DiagramRepository
+MainView --> ZoomableDiagramView
+MainView --> DiagramModel
+MainView --> AnalysisSummary
+
+JavaClassParser --> DiagramModel
+JavaClassParser --> ClassInfo
+JavaClassParser --> RelationInfo
+JavaClassParser --> RelationType
+
+DiagramModel "1" o-- "*" ClassInfo
+DiagramModel "1" o-- "*" RelationInfo
+RelationInfo --> RelationType
+
+ZoomableDiagramView --> DiagramPane
+MainView --> AppTheme
+MainView --> AppIcons
+
+DiagramPane --> DiagramModel
+DiagramPane --> ClassInfo
+DiagramPane --> RelationInfo
+DiagramPane --> RelationType
+DiagramPane --> DiagramPngExporter
+DiagramPane --> DiagramSvgWriter
+DiagramPane --> DiagramRenderSnapshot
+
+DiagramSvgWriter --> DiagramRenderSnapshot
+DiagramPngExporter --> DiagramPane
+
+DiagramRepository --> DatabaseConfig
+DatabaseInitializer --> DatabaseConfig
+DiagramRepository --> DiagramModel
+DiagramRepository --> ClassInfo
+DiagramRepository --> RelationInfo
+DiagramRepository --> RelationType
+DiagramRepository --> AnalysisSummary
+
+DiagramRenderSnapshot *-- ClassBlock
+DiagramRenderSnapshot *-- EdgeSegment
+DiagramRenderSnapshot *-- Legend
+EdgeSegment --> RelationType
