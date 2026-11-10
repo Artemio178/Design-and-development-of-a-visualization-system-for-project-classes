@@ -187,10 +187,10 @@ org.example.javakyrsach2
 ## 🖥 Интерфейс приложения
 
 ### Главное окно
-![Главное окно](screenshots/main-window.png)
+![Главное окно](screenshots/mainmapge.png)
 
 ### Визуализация архитектуры
-![Диаграмма архитектуры](screenshots/architecture-diagram.png)
+![Диаграмма архитектуры](screenshots/analuspage.png)
 
 ## 🚀 Запуск проекта
 
